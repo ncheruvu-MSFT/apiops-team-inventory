@@ -1,0 +1,32 @@
+openapi: 3.0.1
+info:
+  title: Team Inventory API
+  description: Stock levels and warehouse lookups. Owned by Team Inventory.
+  version: '1.0'
+servers:
+  - url: https://apim-y3ownlt7uuuqu.azure-api.net
+paths:
+  /team-inventory/stock:
+    get:
+      summary: Get stock level
+      description: Returns current stock level for a SKU (published by Team Inventory's GitHub Actions pipeline)
+      operationId: get-stock-level
+      responses:
+        '200':
+          description: OK
+  /team-inventory/reserve:
+    post:
+      summary: Reserve stock
+      description: Reserves stock for an order
+      operationId: post-stock-reservation
+      responses:
+        '201':
+          description: Created
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+security:
+  - apiKeyHeader: []

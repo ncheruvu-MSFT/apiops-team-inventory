@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "sub-team-inventory-api",
+    "scope": "/apis/team-inventory-api",
+    "allowTracing": true,
+    "state": "active"
+  }
+}

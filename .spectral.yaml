@@ -1,0 +1,33 @@
+# Spectral ruleset enforcing Team Inventory's naming convention. Real blocking gate in
+# run-publisher.yml (not `|| true`).
+extends: []
+rules:
+  team-prefixed-paths:
+    description: 'All paths must be scoped under /team-inventory (NAMING-CONVENTIONS.md)'
+    message: "Path '{{property}}' must start with /team-inventory -- this repo only owns Team Inventory's API surface"
+    severity: error
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/team-inventory"
+
+  operation-id-kebab-case:
+    description: 'operationId must be kebab-case: <verb>-<resource>[-<detail>]'
+    message: "operationId '{{value}}' must be kebab-case, e.g. get-stock-level"
+    severity: error
+    given: "$.paths[*][*].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+
+  title-must-match-team:
+    description: 'info.title must match the API display name convention'
+    message: "info.title '{{value}}' must start with 'Team Inventory'"
+    severity: error
+    given: "$.info.title"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Team Inventory"

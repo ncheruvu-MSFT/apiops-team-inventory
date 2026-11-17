@@ -1,0 +1,3 @@
+# APIOps extractor filter -- Team Inventory repo. Scopes extraction to ONLY this team's API.
+apis:
+  - team-inventory-api

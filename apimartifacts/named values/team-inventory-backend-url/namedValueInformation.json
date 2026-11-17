@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "displayName": "team-inventory-backend-url",
+    "secret": false,
+    "tags": [
+      "team:inventory"
+    ],
+    "value": "https://inventory-backend.internal.contoso.com"
+  }
+}
