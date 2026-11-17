@@ -3,7 +3,6 @@
     "path": "team-inventory",
     "apiRevision": "1",
     "authenticationSettings": {},
-    "description": "Team Inventory API -- stock levels and warehouse lookups. Owned by Team Inventory.",
     "displayName": "Team Inventory API",
     "isCurrent": true,
     "protocols": [
@@ -13,6 +12,6 @@
       "header": "Ocp-Apim-Subscription-Key",
       "query": "subscription-key"
     },
-    "subscriptionRequired": true
+    "subscriptionRequired": false
   }
 }
