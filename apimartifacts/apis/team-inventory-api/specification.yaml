@@ -4,7 +4,7 @@ info:
   description: Stock levels and warehouse lookups. Owned by Team Inventory.
   version: '1.0'
 servers:
-  - url: https://apim-y3ownlt7uuuqu.azure-api.net/team-inventory
+  - url: https://<APIM_SERVICE_NAME>.azure-api.net/team-inventory
 paths:
   /stock:
     get:
